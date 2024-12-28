@@ -1,116 +1,184 @@
-<div style="max-width: 600px; margin: 0 auto; font-family: 'Arial', sans-serif;">
-  <!-- Мовні кнопки зверху -->
-  <div style="text-align: center; margin-bottom: 20px;">
-    <button onclick="switchLanguage('uk')" id="ukBtn"
-      style="padding: 10px 20px; margin: 0 10px; border: none; border-radius: 5px; background: #1a472a; color: white; cursor: pointer; font-weight: bold;">Українська</button>
-    <button onclick="switchLanguage('en')" id="enBtn"
-      style="padding: 10px 20px; margin: 0 10px; border: none; border-radius: 5px; background: #d4af37; color: #1a472a; cursor: pointer; font-weight: bold;">English</button>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Домашні Смаколики</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="styles.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container">
+    <!-- Мовні кнопки -->
+  <div class="language-buttons">
+    <button onclick="switchLanguage('uk')" id="ukBtn" class="lang-btn">Укр</button>
+    <button onclick="switchLanguage('en')" id="enBtn" class="lang-btn">Eng</button>
   </div>
 
-  <div
-    style="background: linear-gradient(135deg, #1a472a, #2c5530); border-radius: 15px; padding: 30px; color: white; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
-    <!-- Святкова стрічка -->
-    <div
-      style="background: #d4af37; transform: rotate(-2deg); margin: -40px -10px 20px -10px; padding: 10px; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
-      <h1 class="uk" style="margin: 0; color: #1a472a; font-size: 24px; text-transform: uppercase;">🎄 Домашні Смаколики
-        🎄</h1>
-      <h1 class="en" style="margin: 0; color: #1a472a; font-size: 24px; text-transform: uppercase; display: none;">🎄
-        Homemade Delicacies 🎄</h1>
+
+    <div class="main-container">
+      <!-- Святкова стрічка -->
+      <div class="festive-ribbon">
+        <h1 class="uk">🎄 Домашні Смаколики 🎄</h1>
+        <h1 class="en">🎄 Homemade Delicacies 🎄</h1>
+      </div>
+
+      <!-- Фото продуктів -->
+      <div class="products-container">
+        <div class="product-card">
+          <img src="public/images/products/original/20231208_083051.jpg" alt="Домашня ковбаса" class="product-image">
+          <p class="uk product-title">Копчена ковбаса</p>
+          <p class="en product-title">Smoked Sausage</p>
+        </div>
+        <div class="product-card">
+          <img src="public/images/products/original/428457738_122126285702147005_4384914976674864097_n.jpg"
+            alt="Домашня шинка" class="product-image">
+          <p class="uk product-title">Домашня шинка</p>
+          <p class="en product-title">Homemade Ham</p>
+        </div>
+      </div>
+
+      <!-- Кнопка замовлення -->
+      <div class="order-button-container">
+        <button onclick="openOrderModal()" class="order-button">
+          <span class="uk">🎁 Оформити замовлення</span>
+          <span class="en">🎁 Place an Order</span>
+        </button>
+      </div>
+
+      <!-- Контактна інформація -->
+      <div class="contact-section">
+        <h2 class="uk contact-title">Як з нами зв'язатись</h2>
+        <h2 class="en contact-title">Contact Us</h2>
+
+        <div class="contact-box">
+          <p class="uk">
+            Телефонуйте:
+            <a href="tel:+14373391127" class="contact-link">(437) 553-9167</a>
+          </p>
+          <p class="en">
+            Call us:
+            <a href="tel:+14373391127" class="contact-link">(437) 553-9167</a>
+          </p>
+        </div>
+
+        <a href="https://invite.viber.com/?g2=AQBvyLi2yucy9VIfnLB3PNtwl5CgLrC8iWUtovgLi3O%2FTHjXF4%2BpHjkYYTBrGv7N"
+          target="_blank" class="viber-button">
+          <span class="uk">💬 Приєднатися до Viber групи</span>
+          <span class="en">💬 Join our Viber group</span>
+        </a>
+
+        <div class="contact-box">
+          <p class="uk">📍 Доставка: Гамільтон | Ніагара Регіон</p>
+          <p class="en">📍 Delivery: Hamilton | Niagara Region</p>
+        </div>
+      </div>
+
+      <!-- Заклик до дії -->
+      <div class="cta-section">
+        <p class="uk cta-text">🎉 Приєднуйтесь до нашої спільноти! 🎉</p>
+        <p class="en cta-text">🎉 Join our community! 🎉</p>
+
+        <p class="uk cta-subtext">* Щоденні оновлення асортименту та спеціальні пропозиції в Viber групі</p>
+        <p class="en cta-subtext">* Daily updates and special offers in our Viber group</p>
+      </div>
     </div>
 
-    <!-- Фото продуктів -->
-    <div style="display: flex; justify-content: space-between; margin: 20px 0; gap: 15px;">
-      <div style="flex: 1; background: white; border-radius: 10px; overflow: hidden;">
-        <!-- Використовуємо тимчасове зображення -->
-        <img src="20231208_083051.jpg" alt="Домашня ковбаса"
-          style="width: 100%; height: 250px; object-fit: cover;">
-        <p class="uk" style="color: #1a472a; padding: 10px; margin: 0; font-weight: bold; text-align: center;">Копчена
-          ковбаса</p>
-        <p class="en"
-          style="color: #1a472a; padding: 10px; margin: 0; font-weight: bold; text-align: center; display: none;">Smoked
-          Sausage</p>
+    <!-- Модальне вікно замовлення -->
+    <div class="modal fade" id="orderModal" tabindex="-1">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">
+              <span class="uk">🎄 Оформлення замовлення на 29 грудня</span>
+              <span class="en">🎄 Place an Order for December 29</span>
+            </h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form id="orderForm">
+              <div class="mb-3">
+                <label class="form-label">
+                  <span class="uk">Ім'я*</span>
+                  <span class="en">Name*</span>
+                </label>
+                <input type="text" class="form-control" id="name" required>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">
+                  <span class="uk">Телефон*</span>
+                  <span class="en">Phone*</span>
+                </label>
+                <input type="tel" class="form-control" id="phone" required>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">
+                  <span class="uk">Адреса доставки*</span>
+                  <span class="en">Delivery Address*</span>
+                </label>
+                <textarea class="form-control" id="address" rows="2" required></textarea>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">
+                  <span class="uk">Оберіть продукти* (30 CAD/кг)</span>
+                  <span class="en">Select Products* (30 CAD/kg)</span>
+                </label>
+                <div class="product-selection">
+                  <div class="form-check product-item">
+                    <input class="form-check-input" type="checkbox" id="kovbasa">
+                    <label class="form-check-label">
+                      <span class="uk">Копчена ковбаса</span>
+                      <span class="en">Smoked Sausage</span>
+                    </label>
+                    <input type="number" class="form-control quantity-input" id="kovbasa-qty" min="0" step="0.5"
+                      disabled>
+                  </div>
+                  <div class="form-check product-item">
+                    <input class="form-check-input" type="checkbox" id="shynka">
+                    <label class="form-check-label">
+                      <span class="uk">Домашня шинка</span>
+                      <span class="en">Homemade Ham</span>
+                    </label>
+                    <input type="number" class="form-control quantity-input" id="shynka-qty" min="0" step="0.5"
+                      disabled>
+                  </div>
+                </div>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">
+                  <span class="uk">Коментарі</span>
+                  <span class="en">Comments</span>
+                </label>
+                <textarea class="form-control" id="comments" rows="2"></textarea>
+              </div>
+              <div class="order-summary">
+                <h5>
+                  <span class="uk">Підсумок замовлення:</span>
+                  <span class="en">Order Summary:</span>
+                </h5>
+                <div id="orderDetails"></div>
+                <div id="totalPrice"></div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+              <span class="uk">Закрити</span>
+              <span class="en">Close</span>
+            </button>
+            <button type="button" class="btn btn-success" onclick="submitOrder()">
+              <span class="uk">Відправити замовлення</span>
+              <span class="en">Submit Order</span>
+            </button>
+          </div>
+        </div>
       </div>
-      <div style="flex: 1; background: white; border-radius: 10px; overflow: hidden;">
-        <!-- Використовуємо тимчасове зображення -->
-        <img src="428457738_122126285702147005_4384914976674864097_n.jpg" alt="Домашня шинка"
-          style="width: 100%; height: 250px; object-fit: cover;">
-        <p class="uk" style="color: #1a472a; padding: 10px; margin: 0; font-weight: bold; text-align: center;">Домашня
-          шинка</p>
-        <p class="en"
-          style="color: #1a472a; padding: 10px; margin: 0; font-weight: bold; text-align: center; display: none;">
-          Homemade Ham</p>
-      </div>
-    </div>
-
-    <!-- Контактна інформація -->
-    <div style="text-align: center; margin-top: 20px;">
-      <h2 class="uk" style="color: #d4af37; font-size: 28px; margin-bottom: 20px;">Як з нами зв'язатись</h2>
-      <h2 class="en" style="color: #d4af37; font-size: 28px; margin-bottom: 20px; display: none;">Contact Us</h2>
-
-      <!-- Телефон -->
-      <div style="background: rgba(255,255,255,0.1); border-radius: 10px; padding: 15px; margin: 15px 0;">
-        <p class="uk" style="font-size: 18px; margin: 5px 0;">
-          Телефонуйте:
-          <a href="tel:+14373391127" style="color: #d4af37; text-decoration: none; font-weight: bold;">
-            (437) 553-9167
-          </a>
-        </p>
-        <p class="en" style="font-size: 18px; margin: 5px 0; display: none;">
-          Call us:
-          <a href="tel:+14373391127" style="color: #d4af37; text-decoration: none; font-weight: bold;">
-            (437) 553-9167
-          </a>
-        </p>
-      </div>
-
-      <!-- Viber кнопка -->
-      <a href="https://invite.viber.com/?g2=AQBvyLi2yucy9VIfnLB3PNtwl5CgLrC8iWUtovgLi3O%2FTHjXF4%2BpHjkYYTBrGv7N"
-        target="_blank"
-        style="display: inline-block; background: #7360f2; color: white; padding: 15px 30px; border-radius: 25px; text-decoration: none; font-weight: bold; margin: 20px 0; transition: transform 0.2s; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
-        <span class="uk" style="font-size: 20px;">💬 Приєднатися до Viber групи</span>
-        <span class="en" style="font-size: 20px; display: none;">💬 Join our Viber group</span>
-      </a>
-
-      <div style="background: rgba(255,255,255,0.1); border-radius: 10px; padding: 15px; margin: 15px 0;">
-        <p class="uk" style="font-size: 18px; margin: 5px 0;">📍 Доставка: Гамільтон | Ніагара Регіон</p>
-        <p class="en" style="font-size: 18px; margin: 5px 0; display: none;">📍 Delivery: Hamilton | Niagara Region</p>
-      </div>
-    </div>
-
-    <!-- Заклик до дії -->
-    <div style="text-align: center; margin-top: 20px;">
-      <p class="uk" style="font-size: 20px; color: #d4af37;">🎉 Приєднуйтесь до нашої спільноти! 🎉</p>
-      <p class="en" style="font-size: 20px; color: #d4af37; display: none;">🎉 Join our community! 🎉</p>
-
-      <p class="uk" style="font-size: 16px; color: #ffffff99; margin-top: 10px;">* Щоденні оновлення асортименту та
-        спеціальні пропозиції в Viber групі</p>
-      <p class="en" style="font-size: 16px; color: #ffffff99; margin-top: 10px; display: none;">* Daily updates and
-        special offers in our Viber group</p>
     </div>
   </div>
-</div>
 
-<script>
-  function switchLanguage(lang) {
-    const ukElements = document.querySelectorAll('.uk');
-    const enElements = document.querySelectorAll('.en');
-    const ukBtn = document.getElementById('ukBtn');
-    const enBtn = document.getElementById('enBtn');
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
 
-    if (lang === 'uk') {
-      ukElements.forEach(el => el.style.display = '');
-      enElements.forEach(el => el.style.display = 'none');
-      ukBtn.style.background = '#1a472a';
-      ukBtn.style.color = 'white';
-      enBtn.style.background = '#d4af37';
-      enBtn.style.color = '#1a472a';
-    } else {
-      ukElements.forEach(el => el.style.display = 'none');
-      enElements.forEach(el => el.style.display = '');
-      enBtn.style.background = '#1a472a';
-      enBtn.style.color = 'white';
-      ukBtn.style.background = '#d4af37';
-      ukBtn.style.color = '#1a472a';
-    }
-  }
-</script>
+</body>
+
+</html>
